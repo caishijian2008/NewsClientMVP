@@ -52,7 +52,7 @@
             android:layout_width="23dp"
             android:layout_height="35dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="6dp"
             android:layout_marginTop="6dp"
             android:background="@drawable/image_categorybar_right_arrow" />
 
