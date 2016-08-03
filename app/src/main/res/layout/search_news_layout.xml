@@ -22,7 +22,7 @@
             android:textSize="23.0sp" />
     </RelativeLayout>-->
 	<RelativeLayout 
-	    android:id="@id/searchBox_layout"
+	    android:id="@+id/searchBox_layout"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:background="@drawable/image_search_searchbox"

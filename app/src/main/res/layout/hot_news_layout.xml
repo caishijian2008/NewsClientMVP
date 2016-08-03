@@ -1,13 +1,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@id/hot_news_layout"
+    android:id="@+id/hot_news_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/main_background"
     android:orientation="vertical" >
 
     <RelativeLayout
-        android:id="@id/titlebar_layout"
+        android:id="@+id/titlebar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/image_titlebar_background" >
@@ -22,7 +22,7 @@
             android:textSize="23.0sp" />
 
         <Button
-            android:id="@id/titlebar_refresh"
+            android:id="@+id/titlebar_refresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -31,7 +31,7 @@
             android:background="@drawable/btn_titlebar_refresh_selector" />
 
         <ProgressBar
-            android:id="@id/titlebar_progress"
+            android:id="@+id/titlebar_progress"
             style="?android:attr/progressBarStyleLarge"
             android:layout_width="25.0dip"
             android:layout_height="25.0dip"
@@ -43,7 +43,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@id/categorybar_layout"
+        android:id="@+id/categorybar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-16dip"
@@ -59,7 +59,7 @@
             android:background="@drawable/image_categorybar_right_arrow" />
 
         <HorizontalScrollView
-            android:id="@id/categorybar_scrollView"
+            android:id="@+id/categorybar_scrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dip"
@@ -68,7 +68,7 @@
             android:scrollbars="none" >
 
             <LinearLayout
-                android:id="@id/category_layout"
+                android:id="@+id/category_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
@@ -77,11 +77,11 @@
         </HorizontalScrollView>
     </RelativeLayout>
     <ListView
-        android:id="@id/hot_news_list"
+        android:id="@+id/hot_news_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:cacheColorHint="#00000000"
         android:divider="@drawable/image_list_separator_line"
-        android:fastScrollEnabled="true"
         android:listSelector="@drawable/news_list_item_selector" />
+        <!--android:fastScrollEnabled="true"-->
 </LinearLayout>

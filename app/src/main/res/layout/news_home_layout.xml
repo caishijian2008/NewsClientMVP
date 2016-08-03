@@ -1,74 +1,72 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@id/main_layout"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/main_background"
     android:orientation="vertical" >
 
     <RelativeLayout
-        android:id="@id/titlebar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/image_titlebar_background" >
+        android:background="@drawable/image_categorybar_background">
+
+        <Button
+            android:id="@+id/user_profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/user_default" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="9dp"
-            android:text="@string/app_name"
-            android:textColor="@color/white"
-            android:textSize="23sp" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:textSize="18sp"
+            android:textColor="#FFFFFFFF"
+            android:text="@string/app_name"/>
 
         <Button
-            android:id="@id/titlebar_refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/btn_titlebar_refresh_selector" />
-
-        <ProgressBar
-            android:id="@id/titlebar_progress"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentRight="true"
+            android:id="@+id/news_search"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginRight="14dp"
-            android:layout_marginTop="10dp"
-            android:clickable="false"
-            android:visibility="gone" />
+            android:layout_alignParentRight="true"
+            android:background="@drawable/search_button_selector" />
+
+
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@id/categorybar_layout"
+        android:id="@+id/categorybar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-16dp"
         android:background="@drawable/image_categorybar_background" >
 
         <Button
-            android:id="@id/category_arrow_right"
-            android:layout_width="6dp"
-            android:layout_height="10dp"
+            android:id="@+id/category_arrow_right"
+            android:layout_width="23dp"
+            android:layout_height="35dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="12dp"
-            android:layout_marginTop="17dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="6dp"
             android:background="@drawable/image_categorybar_right_arrow" />
 
         <HorizontalScrollView
-            android:id="@id/categorybar_scrollView"
+            android:id="@+id/categorybar_scrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="3dp"
-            android:layout_toLeftOf="@id/category_arrow_right"
+            android:layout_toLeftOf="@+id/category_arrow_right"
             android:scrollbars="none" >
 
             <LinearLayout
-                android:id="@id/category_layout"
+                android:id="@+id/category_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
@@ -79,12 +77,34 @@
 
 
     <ListView
-        android:id="@id/news_list"
+        android:id="@+id/news_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:cacheColorHint="#00000000"
         android:divider="@drawable/image_list_separator_line"
-        android:fastScrollEnabled="true"
         android:listSelector="@drawable/news_list_item_selector" />
+
+    <RelativeLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="-120dp">
+
+        <Button
+            android:id="@+id/titlebar_refresh"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@drawable/btn_titlebar_refresh_selector" />
+
+        <ProgressBar
+            android:id="@+id/titlebar_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:clickable="false"
+            android:visibility="gone" />
+    </RelativeLayout>
+
 
 </LinearLayout>

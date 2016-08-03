@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 最外层界面布局是RelativeLayout -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@id/newsdetail_layout"
+    android:id="@+id/newsdetail_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
@@ -11,13 +11,13 @@
 		 	一个TextView, 一个跟帖按钮
     -->
     <RelativeLayout 
-        android:id="@id/newsdetail_titlebar_layout"
+        android:id="@+id/newsdetail_titlebar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/image_titlebar_background"
         >
         <Button 
-            android:id="@id/newsdetail_titlebar_previous"
+            android:id="@+id/newsdetail_titlebar_previous"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -26,7 +26,7 @@
             android:background="@drawable/newsdetail_titlebar_btn_privious_selector"
             />
         <Button
-            android:id="@id/newsdetail_titlebar_next"
+            android:id="@+id/newsdetail_titlebar_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -35,7 +35,7 @@
             android:background="@drawable/newsdetail_titlebar_btn_next_selector"
             />
         <Button
-            android:id="@id/newsdetail_titlebar_comments"
+            android:id="@+id/newsdetail_titlebar_comments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -45,27 +45,27 @@
             android:textColor="@color/white"
             android:background="@drawable/newsdetail_titlebar_btn_comments_selector" />
         <TextView
-            android:id="@id/newsdetail_titlebar_title"
+            android:id="@+id/newsdetail_titlebar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/newsdetail_titlebar_previous"
+            android:layout_alignBaseline="@+id/newsdetail_titlebar_previous"
             android:layout_marginLeft="20dip"
-            android:layout_toRightOf="@id/newsdetail_titlebar_previous"
+            android:layout_toRightOf="@+id/newsdetail_titlebar_previous"
             android:text="校内"
             android:textColor="@color/white"
             android:textSize="18.0sp" />
      </RelativeLayout>
 	  <!-- 用于翻页的的ViewFlipper -->
 	  <ViewFlipper
-        android:id="@id/news_body_flipper"
+        android:id="@+id/news_body_flipper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/newsdetail_titlebar_layout"
+        android:layout_below="@+id/newsdetail_titlebar_layout"
         android:layout_marginBottom="40.0dip" >
     </ViewFlipper>
 
     <include
-        android:id="@id/comment_reply_frame"
+        android:id="@+id/comment_reply_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

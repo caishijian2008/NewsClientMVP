@@ -7,7 +7,7 @@
     android:orientation="vertical" >
 
     <RelativeLayout
-        android:id="@id/titlebar_layout"
+        android:id="@+id/titlebar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -24,7 +24,7 @@
             android:textSize="23.0sp" />
 
         <Button
-            android:id="@id/addSubscription"
+            android:id="@+id/addSubscription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -34,17 +34,17 @@
     </RelativeLayout>
     
     <ImageView
-        android:id="@id/subscription_welcome"
+        android:id="@+id/subscription_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/titlebar_layout"
+        android:layout_below="@+id/titlebar_layout"
         android:layout_centerHorizontal="true"
         android:src="@drawable/image_subscription_welcome_background" />
        <Button
-        android:id="@id/begin_subscription"
+        android:id="@+id/begin_subscription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/subscription_welcome"
+        android:layout_below="@+id/subscription_welcome"
         android:layout_marginTop="30.0dip"
         android:layout_centerHorizontal="true"
         android:background="@drawable/begin_subsciption_selector"

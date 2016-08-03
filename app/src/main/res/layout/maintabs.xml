@@ -33,35 +33,35 @@
             android:orientation="horizontal" >
 
             <RadioButton
-                android:id="@id/news_home_tabbar_button"
+                android:id="@+id/news_home_tabbar_button"
                 style="@style/main_tab_bottom"
                 android:layout_marginTop="8.0dip"
                 android:background="@drawable/image_tabbar_button_news_home_selector"
                 android:tag="news_home_tabbar_button" />
 
             <RadioButton
-                android:id="@id/news_subscription_tabbar_button"
+                android:id="@+id/news_subscription_tabbar_button"
                 style="@style/main_tab_bottom"
                 android:layout_marginTop="8.0dip"
                 android:background="@drawable/image_tabbar_button_subscription_selector"
                 android:tag="news_subscription_tabbar_button" />
 
             <RadioButton
-                android:id="@id/hot_news_tabbar_button"
+                android:id="@+id/hot_news_tabbar_button"
                 style="@style/main_tab_bottom"
                 android:layout_marginTop="8.0dip"
                 android:background="@drawable/image_tabbar_button_hot_news_selector"
                 android:tag="hot_news_tabbar_button" />
 
             <RadioButton
-                android:id="@id/financial_index_tabbar_button"
+                android:id="@+id/financial_index_tabbar_button"
                 style="@style/main_tab_bottom"
                 android:layout_marginTop="8.0dip"
                 android:background="@drawable/image_tabbar_button_financial_index_selector"
                 android:tag="financial_index_tabbar_button" />
 
             <RadioButton
-                android:id="@id/search_news_tabbar_button"
+                android:id="@+id/search_news_tabbar_button"
                 style="@style/main_tab_bottom"
                 android:layout_marginTop="8.0dip"
                 android:background="@drawable/image_tabbar_button_search_news_selector"
