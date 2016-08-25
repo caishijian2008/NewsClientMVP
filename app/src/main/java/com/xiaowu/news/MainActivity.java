@@ -249,7 +249,7 @@ public class MainActivity extends Activity {
 		}
 		//本机:http://10.0.2.2:8080/web/getSpecifyCategoryNews
 		//wifi局域网：192.168.220.1
-		String url = "http://192.168.0.102:8080/NewsClientServer/getSpecifyCategoryNews";
+		String url = "http://192.168.0.101:8080/NewsClientServer/getSpecifyCategoryNews";
 		String params = "startnid=" + startnid + "&count=" + NEWSCOUNT
 				+ "&cid=" + cid;
 		SyncHttp2 syncHttp = new SyncHttp2();

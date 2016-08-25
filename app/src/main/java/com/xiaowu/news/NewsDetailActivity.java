@@ -313,7 +313,7 @@ public class NewsDetailActivity extends Activity {
 		//模拟器:url = "http://10.0.2.2:8080/web/getNews";
 		//本机:http://127.0.0.1:8080
 		//wifi局域网:http://192.168.220.1:8080
-		String url = "http://192.168.0.102:8080/NewsClientServer/getNews";
+		String url = "http://192.168.0.101:8080/NewsClientServer/getNews";
 		String params = "nid=" + mNid;
 		try {
 			String retString = syncHttp.httpGet(url, params);

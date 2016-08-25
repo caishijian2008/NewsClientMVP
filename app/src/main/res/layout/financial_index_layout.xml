@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:orientation="vertical">
+                android:orientation="horizontal">
             </LinearLayout>
         </HorizontalScrollView>
     </RelativeLayout>
@@ -129,9 +129,10 @@
         android:id="@+id/financial_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:cacheColorHint="#00000000"
         android:divider="@drawable/image_list_separator_line"
         android:listSelector="@drawable/news_list_item_selector" />
-        <!--android:fastScrollEnabled="true"-->
+        <!--
+        android:cacheColorHint="#00000000"
+        android:fastScrollEnabled="true"-->
 
 </LinearLayout>

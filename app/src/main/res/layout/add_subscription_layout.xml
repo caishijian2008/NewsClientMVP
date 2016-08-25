@@ -3,8 +3,7 @@
     android:id="@+id/addSubscription_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_background"
-    android:orientation="vertical" >
+    android:background="@drawable/main_background">
 
     <RelativeLayout
         android:id="@+id/titlebar_layout"
@@ -38,7 +37,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/titlebar_layout"
-        android:cacheColorHint="#00000000"
         android:divider="@drawable/image_list_separator_line"
         android:listSelector="@drawable/news_list_item_selector" >
     </ListView>

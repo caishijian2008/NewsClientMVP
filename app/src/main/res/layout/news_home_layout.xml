@@ -49,11 +49,11 @@
 
         <Button
             android:id="@+id/category_arrow_right"
-            android:layout_width="23dp"
-            android:layout_height="35dp"
+            android:layout_width="20dp"
+            android:layout_height="32dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="6dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="7dp"
             android:background="@drawable/image_categorybar_right_arrow" />
 
         <HorizontalScrollView
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="-120dp">
+        android:layout_marginTop="-115dp">
 
         <Button
             android:id="@+id/titlebar_refresh"
