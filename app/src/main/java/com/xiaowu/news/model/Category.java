@@ -7,6 +7,8 @@ public class Category {
 	private String title;
 	//类型次数
 	private String sequnce;
+
+	private boolean deleted;
 	
 	public Category() {
 		super();
@@ -48,7 +50,15 @@ public class Category {
 	public void setSequnce(String sequnce) {
 		this.sequnce = sequnce;
 	}
-	
+
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
