@@ -224,7 +224,7 @@ public class MainActivity extends Activity {
 
 		mLoadmoreButton = (Button) findViewById(R.id.loadmore_btn);
 		mLoadmoreButton.setOnClickListener(loadmoreListener);
-		
+
 	}
 
 	Runnable specCatNews = new Runnable() {
