@@ -14,14 +14,14 @@ public class News {
 	private int commentCount; //评论数
 	private String ptime; //发布时间
 	private String imgSrc; //图片地址
-	private boolean deleted; //是否已删除
+	private int deleted; //是否已删除
 
 	public News() {
 	}
 
 	public News(int nid, int cid, String title, String digest, String body,
 			String source, int commentCount, String ptime, String imgSrc,
-			boolean deleted) {
+			int deleted) {
 		this.nid = nid;
 		this.cid = cid;
 		this.title = title;
@@ -106,11 +106,11 @@ public class News {
 		this.imgSrc = imgSrc;
 	}
 
-	public boolean isDeleted() {
+	public int getDeleted() {
 		return deleted;
 	}
 
-	public void setDeleted(boolean deleted) {
+	public void setDeleted(int deleted) {
 		this.deleted = deleted;
 	}
 

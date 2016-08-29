@@ -61,7 +61,6 @@ public class SyncHttp2 {
 				response = "返回码:" + statusCode;
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
 			throw new Exception(e);
 		}
 		return response;

@@ -31,6 +31,7 @@ import com.xiaowu.news.custom.ConstomSimpleAdapter;
 import com.xiaowu.news.model.Category;
 import com.xiaowu.news.service.SyncHttp2;
 import com.xiaowu.news.util.DensityUtil;
+import com.xiaowu.news.util.HttpUtil;
 import com.xiaowu.news.util.StringUtil;
 
 import org.json.JSONArray;
@@ -76,13 +77,15 @@ public class MainActivity extends Activity {
 	private Button mLoadmoreButton;						// 加载更多按钮
 
 	private LoadNewsAsyncTack mLoadNewsAsyncTack;		// 声明LoadNewsAsyncTack引用
-	
+	private HttpUtil httpUtil;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.news_home_layout);
-		
+
+		httpUtil = new HttpUtil(this);
+
 		//通过id来获取按钮的引用
 		mTitleBarRefresh = (Button) findViewById(R.id.titlebar_refresh);
 		mTitleBarProgress = (ProgressBar) findViewById(R.id.titlebar_progress);
@@ -230,6 +233,8 @@ public class MainActivity extends Activity {
 	Runnable specCatNews = new Runnable() {
 		@Override
 		public void run() {
+			httpUtil.getAllNewsToDb();
+
 			getSpecCatNews(mCid, mNewsData, 0, true);
 		}
 	};
