@@ -2,11 +2,12 @@ package com.xiaowu.news.util;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.xiaowu.news.model.News;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by caishijian on 16-8-26.
@@ -33,6 +34,11 @@ public class DBHelper {
         return dbHelper;
     }
 
+    /**
+     * 添加新闻
+     *
+     * @param news
+     */
     public void addNews(News news) {
         if (news != null) {
             ContentValues values = new ContentValues();
@@ -68,7 +74,20 @@ public class DBHelper {
     }
 
 
-    public List<News> queryRecord(int id) {
-        return null;
+    public ArrayList<News> queryNewsByCid(int cid, int startnid, int count) {
+        ArrayList<News> list = new ArrayList<News>();
+        Cursor cursor = db.query("tb_news", null, "cid = ?",
+                new String[]{String.valueOf(cid)}, null, null, "ptime desc", "?,?");
+        while (cursor.moveToNext()) {
+            News news = new News();
+            news.setNid(cursor.getInt(cursor.getColumnIndex("nid")));
+            news.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+            news.setDigest(cursor.getString(cursor.getColumnIndex("digest")));
+            news.setSource(cursor.getString(cursor.getColumnIndex("source")));
+            news.setPtime(cursor.getString(cursor.getColumnIndex("ptime")));
+            news.setCommentCount(cursor.getInt(cursor.getColumnIndex("commentCount")));
+            list.add(news);
+        }
+        return list;
     }
 }

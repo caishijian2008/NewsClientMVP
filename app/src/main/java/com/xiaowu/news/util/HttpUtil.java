@@ -9,18 +9,23 @@ import com.xiaowu.news.service.SyncHttp2;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * Created by caishijian on 16-8-2.
  */
 public class HttpUtil {
     private static final String TAG = "main";
-    private final int SUCCESS = 0;						// 加载新闻成功
-    private final int NONEWS = 1;						// 没有新闻
-    private final int NOMORENEWS = 2;					// 没有更多新闻
-    private final int LOADERROR = 3;					// 加载失败
+    private final int SUCCESS = 0;                        // 加载新闻成功
+    private final int NONEWS = 1;                        // 没有新闻
+    private final int NOMORENEWS = 2;                    // 没有更多新闻
+    private final int LOADERROR = 3;                    // 加载失败
 
     private Context context;
     private DBHelper dbHelper;
+    private SyncHttp2 syncHttp;
     private static String url = null;
 
     public HttpUtil(Context context) {
@@ -29,17 +34,17 @@ public class HttpUtil {
     }
 
     /**
-     * 获取指定类型的新闻列表
+     * 获取所有的新闻
      */
     public void getAllNewsToDb() {
 
         String url = "http://192.168.0.101:8080/NewsClientServer/getAllNews";
-        Log.i(TAG, "url:--->"+url);
-        SyncHttp2 syncHttp = new SyncHttp2();
+        Log.i(TAG, "url:--->" + url);
+        syncHttp = new SyncHttp2();
         try {
             // 通过Http协议发送Get请求，返回字符串
             String retStr = syncHttp.httpGet(url, null);
-            Log.i(TAG, "retStr: "+retStr);
+            Log.i(TAG, "retStr: " + retStr);
             JSONObject jsonObject = new JSONObject(retStr);
             int retCode = jsonObject.getInt("ret");
             if (retCode == 0) {
@@ -53,7 +58,7 @@ public class HttpUtil {
                     for (int i = 0; i < newslistArray.length(); i++) {
                         JSONObject newsObject = (JSONObject) newslistArray
                                 .opt(i);
-                        Log.i(TAG, "getAllNewsToDb: "+newsObject.getString("title"));///////////
+                        Log.i(TAG, "getAllNewsToDb: " + newsObject.getString("title"));///////////
                         News news = new News();
                         news.setNid(newsObject.getInt("nid"));
                         news.setCid(newsObject.getInt("cid"));
@@ -80,5 +85,40 @@ public class HttpUtil {
             Log.i(TAG, "加载新闻失败!!");
 
         }
+    }
+
+    public int getSpecCatNews(int cid, List<HashMap<String, Object>> newsList,
+                              int startnid, int newsCount, boolean firstTime) {
+        // 如果是第一次加载的话
+		if (firstTime) {
+			newsList.clear();
+		}
+
+        ArrayList<News> arrayList = new ArrayList<News>();
+        try {
+            arrayList = dbHelper.queryNewsByCid(cid, startnid, newsCount);
+            for (News news : arrayList) {
+                HashMap<String, Object> hashMap = new HashMap<String, Object>();
+                hashMap.put("nid", news.getNid());
+                hashMap.put("newslist_item_title",
+                        news.getTitle());
+                hashMap.put("newslist_item_digest",
+                        news.getDigest());
+                hashMap.put("newslist_item_source",
+                        news.getSource());
+                hashMap.put("newslist_item_ptime",
+                        news.getPtime());
+                hashMap.put("newslist_item_comments",
+                        news.getCommentCount());
+                newsList.add(hashMap);
+            }
+            return SUCCESS;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return LOADERROR;
+        }
+
+
+
     }
 }

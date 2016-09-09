@@ -235,7 +235,8 @@ public class MainActivity extends Activity {
 		public void run() {
 			httpUtil.getAllNewsToDb();
 
-			getSpecCatNews(mCid, mNewsData, 0, true);
+//			getSpecCatNews(mCid, mNewsData, 0, true);
+			httpUtil.getSpecCatNews(mCid, mNewsData, 0, NEWSCOUNT, true);
 		}
 	};
 
@@ -349,8 +350,9 @@ public class MainActivity extends Activity {
 		//在后台运行
 		@Override
 		protected Integer doInBackground(Object... params) {
-			return getSpecCatNews(mCid, mNewsData, (Integer) params[0],
-					(Boolean) params[1]);
+//			return getSpecCatNews(mCid, mNewsData, (Integer) params[0],
+//					(Boolean) params[1]);
+			return httpUtil.getSpecCatNews(mCid, mNewsData, (Integer) params[0], NEWSCOUNT, (Boolean) params[1]);
 		}
 		//完成后台任务
 		@Override
